@@ -1,13 +1,29 @@
 use std::io;
+use whoami;
+use chrono;
+
 mod games {
     pub mod secret_number;
     pub mod rock_paper_scissors;
 }
+
 fn main() {
+    // Obtention de la date local et formatage
+    let date: String = chrono::Local::now().format("%d %b %Y").to_string();
+
+// Obtention de l'heure local et formatage
+    let time: String = chrono::Local::now().format("%H:%M:%S").to_string();
+
+// Obtention du nom d'utilisateur
+    let user: String = whoami::username();
+
+
     loop {
+        println!("Bienvenue {} ", user);
+        println!("Nous somme le : {} il est {}", date, time);
         println!("Menu:");
-        println!("1. Programme Secret Number");
-        println!("2. Programme Rock Paper Scissors");
+        println!("1. Secret Number");
+        println!("2. Rock Paper Scissors");
         // Ajoutez d'autres options de menu pour d'autres programmes
 
         println!("0. Quitter");
