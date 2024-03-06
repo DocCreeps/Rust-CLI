@@ -1,11 +1,13 @@
 use std::io;
 mod games {
     pub mod secret_number;
+    pub mod rock_paper_scissors;
 }
 fn main() {
     loop {
         println!("Menu:");
         println!("1. Programme Secret Number");
+        println!("2. Programme Rock Paper Scissors");
         // Ajoutez d'autres options de menu pour d'autres programmes
 
         println!("0. Quitter");
@@ -25,6 +27,11 @@ fn main() {
                 println!("Vous avez choisi le Programme Secret Number");
                 games::secret_number::secret_number_game();
             }
+            2 => {
+                println!("Vous avez choisi le Programme Rock Paper Scissors");
+                games::rock_paper_scissors::main();
+            }
+
 
             0 => {
                 println!("Au revoir !");
