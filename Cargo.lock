@@ -3,13 +3,6 @@
 version = 3
 
 [[package]]
-name = "Secret_Numer"
-version = "0.1.0"
-dependencies = [
- "rand",
-]
-
-[[package]]
 name = "cfg-if"
 version = "1.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -86,6 +79,13 @@ checksum = "2b962254c1392bbfc8571c17acb5d0e52116bbefd704e965e92e6c60fadc096e"
 dependencies = [
  "getrandom",
  "zerocopy",
+]
+
+[[package]]
+name = "secret_number"
+version = "0.1.0"
+dependencies = [
+ "rand",
 ]
 
 [[package]]
