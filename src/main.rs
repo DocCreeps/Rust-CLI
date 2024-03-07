@@ -1,6 +1,7 @@
 use std::io;
 use whoami;
 use chrono;
+use std::process::Command;
 
 mod games {
     pub mod secret_number;
@@ -55,14 +56,17 @@ fn main() {
 
                     match game_choice {
                         1 => {
+                            Command::new("clear").status().unwrap();
                             println!("Vous avez choisi le Programme Secret Number");
                             games::secret_number::secret_number_game();
                         }
                         2 => {
+                            Command::new("clear").status().unwrap();
                             println!("Vous avez choisi le Programme Rock Paper Scissors");
                             games::rock_paper_scissors::main();
                         }
                         3 => {
+                            Command::new("clear").status().unwrap();
                             println!("Vous avez choisi le Programme Tic Tac Toe");
                             games::tic_tac_toe::main();
                         }
@@ -89,10 +93,12 @@ fn main() {
 
                     match tool_choice {
                         1 => {
+                            Command::new("clear").status().unwrap();
                             println!("Vous avez choisi le Programme Todo List");
                             tools::todos::main();
                         }
                         2 => {
+                            Command::new("clear").status().unwrap();
                             println!("Vous avez choisi le Programme Password Generator");
                             tools::pass_gen::main();
                         }

@@ -33,10 +33,11 @@ pub fn main() {
             _ => println!("Choix invalide"),
         }
     }
-    Command::new("clear").status().unwrap();
+
 }
 
 fn add_task(tasks: &mut Vec<Todo>){
+    Command::new("clear").status().unwrap();
     println!("Entrez le titre de la tâche :");
     let mut title = String::new();
     io::stdin().read_line(&mut title).unwrap();
@@ -55,6 +56,7 @@ fn add_task(tasks: &mut Vec<Todo>){
 }
 
 fn modify_task(tasks: &mut Vec<Todo>) {
+    Command::new("clear").status().unwrap();
     println!("Entrez l'index de la tâche à modifier :");
     let mut input = String::new();
     io::stdin().read_line(&mut input).unwrap();
@@ -90,6 +92,7 @@ fn modify_task(tasks: &mut Vec<Todo>) {
 }
 
 fn toggle_task(tasks: &mut Vec<Todo>){
+    Command::new("clear").status().unwrap();
     println!("Entrez l'index de la tâche à basculer :");
     let mut input = String::new();
     io::stdin().read_line(&mut input).unwrap();
@@ -106,6 +109,7 @@ fn toggle_task(tasks: &mut Vec<Todo>){
 }
 
 fn display_tasks(tasks: &Vec<Todo>) {
+    Command::new("clear").status().unwrap();
     println!("Liste des tâches :");
     for (i, task) in tasks.iter().enumerate() {
         println!("{}. {} {}", i, task.title, if task.completed { "Complétée" } else { "En attente" });
