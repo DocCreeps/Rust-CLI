@@ -58,10 +58,10 @@ Un jeu de morpion
 
 ### Tools
 
-## Todo
+#### Todo
 Permet de créer une liste de tâches à faire, à faire, en cours et faites.
 
-## Password_Generator
+#### Password_Generator
 Permet de générer un ou plusieur mot de passe aléatoire de la longueur souhaitée.
 
 
