@@ -10,6 +10,13 @@ Un jeu de rock paper scissor.
 - [Installation](#installation)
 - [Exécution](#exécution)
 - [Fonctionnalités](#fonctionnalités)
+- [Games](#games)
+  - [Secret_Number](#secret_number)
+  - [Rock_Paper_Scissor](#rock_paper_scissor)
+  - [Tic_Tac_Toe](#tic_tac_toe)
+- [Tools](#tools)
+    - [Todo](#todo)
+    - [Password_Generator](#password_generator)
 - [Configuration](#configuration)
 
 ## Installation
@@ -30,22 +37,32 @@ cargo run
 ```
 
 ## Fonctionnalités
- 
-### Menu
-un menu pour faire le choix du programme a lancer ou pour quitter
 
-### Secret_Number 
+### Games
+
+#### Secret_Number
 Génération aléatoire du chiffre secret : À chaque nouvelle partie, un chiffre secret est généré de manière aléatoire entre 0 et 1000.  
 Limite de 10 essais par partie : Le joueur a jusqu'à 10 essais pour deviner le chiffre secret.  
 Statistiques de la session : Les victoires, défaites, et la moyenne d'essais sont affichées à la fin de chaque session.  
 Liste des essais réussis : Une liste détaillée du nombre d'essais et du nombre de victoires est affichée.  
 
-### Rock_Paper_Scissor
+#### Rock_Paper_Scissor
 Le joueur fait un choix parmis ses 3 : Pierre, Papier, Ciseaux 
 L'ordi a un choix aléatoire
 La pierre bat le ciseaux
 Le ciseaux bat le papier
 Le papier bat la pierre
+
+#### Tic_Tac_Toe
+Un jeu de morpion
+
+### Tools
+
+## Todo
+Permet de créer une liste de tâches à faire, à faire, en cours et faites.
+
+## Password_Generator
+Permet de générer un ou plusieur mot de passe aléatoire de la longueur souhaitée.
 
 
 ## Configuration
