@@ -5,6 +5,7 @@ use chrono;
 mod games {
     pub mod secret_number;
     pub mod rock_paper_scissors;
+    pub mod tic_tac_toe;
 }
 
 mod tools {
@@ -61,10 +62,10 @@ fn main() {
                             println!("Vous avez choisi le Programme Rock Paper Scissors");
                             games::rock_paper_scissors::main();
                         }
-                        // 3 => {
-                        //     println!("Vous avez choisi le Programme Tic Tac Toe");
-                        //     games::tic_tac_toe::main();
-                        // }
+                        3 => {
+                            println!("Vous avez choisi le Programme Tic Tac Toe");
+                            games::tic_tac_toe::main();
+                        }
                         0 => break,
                         _ => println!("Choix invalide. Veuillez entrer un numéro valide."),
                     }
