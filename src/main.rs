@@ -9,7 +9,7 @@ mod games {
 }
 
 mod tools {
-    pub mod todo;
+    pub mod todos;
     pub mod pass_gen;
 }
 
@@ -90,7 +90,7 @@ fn main() {
                     match tool_choice {
                         1 => {
                             println!("Vous avez choisi le Programme Todo List");
-                            tools::todo::main();
+                            tools::todos::main();
                         }
                         2 => {
                             println!("Vous avez choisi le Programme Password Generator");
