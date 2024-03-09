@@ -12,8 +12,8 @@ mod games {
 mod tools {
     pub mod todos;
     pub mod pass_gen;
-
     pub mod timer;
+    pub mod encrypt;
 }
 
 fn main() {
@@ -84,6 +84,7 @@ fn main() {
                     println!("1. Todo List");
                     println!("2. Password Generator");
                     println!("3. Timer");
+                    println!("4. Encrypt/Decrypt (Coming soon)");
                     println!("0. Retour au menu principal");
 
                     let mut tool_choice = String::new();
@@ -109,6 +110,11 @@ fn main() {
                             Command::new("clear").status().unwrap();
                             println!("Vous avez choisi le Programme Timer");
                             tools::timer::main();
+                        }
+                        4 => {
+                            Command::new("clear").status().unwrap();
+                            println!("Vous avez choisi le Programme Encrypt/Decrypt");
+                            tools::encrypt::main();
                         }
                         0 => break,
                         _ => println!("Choix invalide. Veuillez entrer un numéro valide."),
