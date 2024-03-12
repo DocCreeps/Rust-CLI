@@ -3,6 +3,9 @@ use std::process::Command;
 use rand::Rng;
 
 pub fn main() {
+    menu();
+}
+fn game(){
     let mut vie = 3;
     let mut nombretour = 0;
     let mut argentscore = 0;
@@ -57,4 +60,35 @@ pub fn main() {
             println!("Cette boite n'existe pas, tu perds une vie ! Fait attention la prochaine fois !");
         }
     }
+}
+
+fn menu(){
+    loop {
+        println!("Menu: ");
+        println!("1. Jouer");
+        println!("0. Retour au menu principal");
+
+        let mut input = String::new();
+        io::stdin()
+            .read_line(&mut input)
+            .expect("Échec de la lecture de l'entrée utilisateur");
+
+        let opponent: u32 = match input.trim().parse() {
+            Ok(num) => num,
+            Err(_) => {
+                println!("Veuillez entrer un choix valide (1 ou 0).");
+                return;
+            }
+        };
+
+        match opponent {
+            1 => crate::games::boite_maudite::game(),
+            0 => {
+                println!("Au revoir !");
+                break;
+            },
+            _ => println!("Choix invalide"),
+        }
+    }
+
 }

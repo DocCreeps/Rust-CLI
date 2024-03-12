@@ -8,7 +8,7 @@ mod games {
     pub mod rock_paper_scissors;
     pub mod tic_tac_toe;
     pub mod boite_maudite;
-    
+    pub mod batonnets;
 }
 
 mod tools {
@@ -57,6 +57,7 @@ fn main() {
                     println!("2. Rock Paper Scissors");
                     println!("3. Tic Tac Toe");
                     println!("4. Boite Maudite");
+                    println!("5. Bâtonnets");
                     println!("0. Retour au menu principal");
 
                     let mut game_choice = String::new();
@@ -70,23 +71,28 @@ fn main() {
                     match game_choice {
                         1 => {
                             Command::new("clear").status().unwrap();
-                            println!("Vous avez choisi le Programme Secret Number");
+                            println!("Vous avez choisi le jeu Secret Number");
                             games::secret_number::secret_number_game();
                         }
                         2 => {
                             Command::new("clear").status().unwrap();
-                            println!("Vous avez choisi le Programme Rock Paper Scissors");
+                            println!("Vous avez choisi le jeu Rock Paper Scissors");
                             games::rock_paper_scissors::main();
                         }
                         3 => {
                             Command::new("clear").status().unwrap();
-                            println!("Vous avez choisi le Programme Tic Tac Toe");
+                            println!("Vous avez choisi le jeu Tic Tac Toe");
                             games::tic_tac_toe::main();
                         }
                         4 => {
                             Command::new("clear").status().unwrap();
-                            println!("Vous avez choisi le Programme Boite Maudite");
+                            println!("Vous avez choisi le jeu Boite Maudite");
                             games::boite_maudite::main();
+                        }
+                        5 => {
+                            Command::new("clear").status().unwrap();
+                            println!("Vous avez choisi le jeu Bâtonnets");
+                            games::batonnets::main();
                         }
                         0 => break,
                         _ => println!("Choix invalide. Veuillez entrer un numéro valide."),
