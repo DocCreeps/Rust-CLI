@@ -20,7 +20,6 @@ fn game(){
             println!("Perdu, tu n'as plus de vie, ta course vers l'argent s'arrête ici, tu as gagné {} en {} coups.\nTu peux retenter ta chance, qui sais tu gagneras peut être des millions ! ", argentscore, nombretour);
             break;
         }
-
         nombretour += 1;
 
         let mut rng = rand::thread_rng();
@@ -28,7 +27,6 @@ fn game(){
         argentboite = rng.gen_range(1..=100);
 
         loop {
-
             println!("Argent total : {} \n                                            Vie : {} \n```````````````````````````````````````````````````````````````````\n              Quelle boite choisis-tu ? (1, 2 ou 3)\n\n                            __           __          __ \n                           | 1 |         | 2 |         | 3 |\n                            ```            ```           ```", argentscore, vie);
 
             let mut input = String::new();
@@ -90,5 +88,4 @@ fn menu(){
             _ => println!("Choix invalide"),
         }
     }
-
 }
