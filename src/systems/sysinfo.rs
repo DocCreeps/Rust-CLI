@@ -1,22 +1,18 @@
 use std::io;
 use std::process::Command;
 use whoami;
-use ipconfig;
-use sysinfo;
-use std::env;
-
 
 
 pub fn main(){
     menu();
-
 }
 
 fn all(){
-    whoami_info();
+whoami_info();
 }
 
 fn whoami_info(){
+    println!("Whoami : " );
     println!(
         "Nom réel utilisateur   whoami::realname():    {}",
         whoami::realname(),
@@ -26,7 +22,7 @@ fn whoami_info(){
         whoami::username(),
     );
     println!(
-        "Languages               whoami::lang():        {:?}",
+        "Languages               whoami::lang():       {:?}",
         whoami::lang().collect::<Vec<String>>(),
     );
     println!(
@@ -58,16 +54,13 @@ fn whoami_info(){
 
 
 
-
 fn menu(){
     loop {
         loop {
             println!("Bienvenue dans l'outil info Système");
             println!("Choisissez une option :");
             println!("1. Tous voir");
-            println!("2. Processeur");
-            println!("3. CM");
-
+            println!("2. Identité");
             println!("0. Retour au menu principal");
 
             let mut input = String::new();
@@ -78,6 +71,7 @@ fn menu(){
             match choice {
 
                 1 => all(),
+                2 => whoami_info(),
                 0 => break,
                 _ => println!("Choix invalide. Veuillez entrer un numéro valide."),
             }

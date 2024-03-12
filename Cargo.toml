@@ -13,5 +13,3 @@ serde_json = "1.0.114"
 serde = { version = "1.0.197", features = ["derive"] }
 console = "0.15.8"
 rodio = "0.17.3"
-sysinfo = "0.30.7"
-ipconfig = "0.3.2"

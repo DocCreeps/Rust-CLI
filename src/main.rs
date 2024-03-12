@@ -14,9 +14,11 @@ mod tools {
     pub mod pass_gen;
     pub mod timer;
     pub mod encrypt;
+
 }
 mod systems {
     pub mod sysinfo;
+    pub mod benchmark;
 }
 
 
@@ -132,6 +134,7 @@ fn main() {
                 loop {
                     println!("Menu des outils systèmes:");
                     println!("1. Info Système");
+                    println!("2. Benchmark");
                     println!("0. Retour au menu principal");
 
                     let mut system_choice = String::new();
@@ -147,6 +150,11 @@ fn main() {
                             Command::new("clear").status().unwrap();
                             println!("Vous avez choisi le Programme Info système");
                             systems::sysinfo::main();
+                        }
+                        2 => {
+                            Command::new("clear").status().unwrap();
+                            println!("Vous avez choisi le Programme Benchmark");
+                            systems::benchmark::main();
                         }
                         0 => break,
                         _ => println!("Choix invalide. Veuillez entrer un numéro valide."),
