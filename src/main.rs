@@ -7,6 +7,8 @@ mod games {
     pub mod secret_number;
     pub mod rock_paper_scissors;
     pub mod tic_tac_toe;
+    pub mod boite_maudite;
+    
 }
 
 mod tools {
@@ -34,7 +36,7 @@ fn main() {
         println!("Menu principal:");
         println!("1. Jeux");
         println!("2. Outils");
-        println!("3. Systeme");
+        println!("3. Système");
         println!("0. Quitter");
 
         let mut main_choice = String::new();
@@ -54,6 +56,7 @@ fn main() {
                     println!("1. Secret Number");
                     println!("2. Rock Paper Scissors");
                     println!("3. Tic Tac Toe");
+                    println!("4. Boite Maudite");
                     println!("0. Retour au menu principal");
 
                     let mut game_choice = String::new();
@@ -79,6 +82,11 @@ fn main() {
                             Command::new("clear").status().unwrap();
                             println!("Vous avez choisi le Programme Tic Tac Toe");
                             games::tic_tac_toe::main();
+                        }
+                        4 => {
+                            Command::new("clear").status().unwrap();
+                            println!("Vous avez choisi le Programme Boite Maudite");
+                            games::boite_maudite::main();
                         }
                         0 => break,
                         _ => println!("Choix invalide. Veuillez entrer un numéro valide."),
