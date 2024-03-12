@@ -11,7 +11,6 @@ fn all(){
     benchmark_vector_sum(10000000);
 
     benchmark_fibonacci(40);
-
 }
 
 fn benchmark_square_loop(n: u64){
@@ -58,9 +57,13 @@ fn menu(){
         println!("3. Benchmark vector sum");
         println!("4. Fibonacci");
         println!("0. Quitter");
+
         let mut input = String::new();
+
         io::stdin().read_line(&mut input).unwrap();
+
         let choice = input.trim().parse::<usize>().unwrap();
+
         match choice {
             1 => all(),
             2 => {

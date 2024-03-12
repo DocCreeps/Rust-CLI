@@ -52,10 +52,7 @@ fn whoami_info(){
 }
 
 
-
-
 fn menu(){
-    loop {
         loop {
             println!("Bienvenue dans l'outil info Système");
             println!("Choisissez une option :");
@@ -72,10 +69,11 @@ fn menu(){
 
                 1 => all(),
                 2 => whoami_info(),
-                0 => break,
+                0 => {
+                    println!("Au revoir !");
+                    break;
+                },
                 _ => println!("Choix invalide. Veuillez entrer un numéro valide."),
             }
         }
-    }
-
 }
