@@ -15,6 +15,11 @@ mod tools {
     pub mod timer;
     pub mod encrypt;
 }
+mod systems {
+    pub mod sysinfo;
+}
+
+
 
 fn main() {
     let date: String = chrono::Local::now().format("%d %b %Y").to_string();
@@ -27,6 +32,7 @@ fn main() {
         println!("Menu principal:");
         println!("1. Jeux");
         println!("2. Outils");
+        println!("3. Systeme");
         println!("0. Quitter");
 
         let mut main_choice = String::new();
@@ -115,6 +121,32 @@ fn main() {
                             Command::new("clear").status().unwrap();
                             println!("Vous avez choisi le Programme Encrypt/Decrypt");
                             tools::encrypt::main();
+                        }
+                        0 => break,
+                        _ => println!("Choix invalide. Veuillez entrer un numéro valide."),
+                    }
+                }
+            }
+            3 => {
+                // Menu des outils systèmes
+                loop {
+                    println!("Menu des outils systèmes:");
+                    println!("1. Info Système");
+                    println!("0. Retour au menu principal");
+
+                    let mut system_choice = String::new();
+                    io::stdin().read_line(&mut system_choice).expect("Erreur lors de la lecture de la ligne");
+
+                    let system_choice: u32 = match system_choice.trim().parse() {
+                        Ok(num) => num,
+                        Err(_) => continue,
+                    };
+
+                    match system_choice {
+                        1 => {
+                            Command::new("clear").status().unwrap();
+                            println!("Vous avez choisi le Programme Info système");
+                            systems::sysinfo::main();
                         }
                         0 => break,
                         _ => println!("Choix invalide. Veuillez entrer un numéro valide."),
