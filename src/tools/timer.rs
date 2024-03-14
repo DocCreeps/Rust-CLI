@@ -3,6 +3,7 @@ use std::time::Duration;
 use std::sync::mpsc;
 use std::io;
 use rodio::{Decoder, OutputStream, Sink};
+use std::process::Command;
 
 pub fn main() {
     println!("Entrez la durée du timer (format : Min:s) :");
@@ -33,6 +34,7 @@ pub fn main() {
     while time_left > Duration::from_secs(0) {
         let mins = time_left.as_secs() / 60;
         let secs = time_left.as_secs() % 60;
+        Command::new("clear").status().unwrap();
         println!("Temps restant : {:02}:{:02}", mins, secs);
         thread::sleep(Duration::from_secs(1));
         time_left = time_left.checked_sub(Duration::from_secs(1)).unwrap_or(Duration::from_secs(0));
