@@ -27,7 +27,9 @@ fn game(){
         argentboite = rng.gen_range(1..=100);
 
         loop {
-            println!("Argent total : {} \n                                            Vie : {} \n```````````````````````````````````````````````````````````````````\n              Quelle boite choisis-tu ? (1, 2 ou 3)\n\n                            __           __          __ \n                           | 1 |         | 2 |         | 3 |\n                            ```            ```           ```", argentscore, vie);
+            println!("Argent total : {}                                           \
+            Vie : {} \n```````````````````````````````````````````````````````````````````\n              \
+            Quelle boite choisis-tu ? (1, 2 ou 3)\n\n                            ___           ___           ___ \n                           | 1 |         | 2 |         | 3 |\n                            ```           ```           ```", argentscore, vie);
 
             let mut input = String::new();
             io::stdin().read_line(&mut input).expect("Failed to read line");
