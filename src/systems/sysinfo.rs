@@ -48,8 +48,6 @@ fn whoami_info(){
 
 fn info_sys(){
 
-    let mut sys = System::new_all();
-    sys.refresh_all();
 
     println!("Système :");
     println!("Memory :");
@@ -80,6 +78,8 @@ fn cpu(){
     });
 }
 fn memory(){
+    let mut sys = System::new_all();
+    sys.refresh_all();
     println!("Memory");
     println!("total memory: {} GB", sys.total_memory() as f64 / 1_073_741_824.0);
     println!("used memory : {} GB", sys.used_memory() as f64 / 1_073_741_824.0);
