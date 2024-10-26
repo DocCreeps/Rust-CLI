@@ -764,7 +764,6 @@ dependencies = [
 name = "rust_cli"
 version = "0.1.0"
 dependencies = [
- "alsa-sys",
  "chrono",
  "console",
  "rand",

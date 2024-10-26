@@ -9,6 +9,8 @@ mod games {
     pub mod tic_tac_toe;
     pub mod boite_maudite;
     pub mod batonnets;
+    pub mod game421;
+    pub mod pendu;
 }
 
 mod tools {
@@ -16,11 +18,13 @@ mod tools {
     pub mod pass_gen;
     pub mod timer;
     pub mod encrypt;
-
+pub mod temperatureconverter;
 }
 mod systems {
     pub mod sysinfo;
     pub mod benchmark;
+    
+    pub mod algoshort;
 }
 
 
@@ -58,6 +62,8 @@ fn main() {
                     println!("3. Tic Tac Toe");
                     println!("4. Boite Maudite");
                     println!("5. Bâtonnets");
+                    println!("6. 421 ");
+                    println!("7. Pendu");
                     println!("0. Retour au menu principal");
 
                     let mut game_choice = String::new();
@@ -94,6 +100,16 @@ fn main() {
                             println!("Vous avez choisi le jeu Bâtonnets");
                             games::batonnets::main();
                         }
+                        6 => {
+                            Command::new("clear").status().unwrap();
+                            println!("Vous avez choisi le jeu 421");
+                            games::game421::main();
+                        }
+                        7 =>{
+                            Command::new("clear").status().unwrap();
+                            println!("Vous avez choisi le jeu Pendu");
+                            games::pendu::main();
+                        }
                         0 => break,
                         _ => println!("Choix invalide. Veuillez entrer un numéro valide."),
                     }
@@ -107,6 +123,7 @@ fn main() {
                     println!("2. Password Generator");
                     println!("3. Timer");
                     println!("4. Encrypt/Decrypt (Coming soon)");
+                    println!("5. Temperature Converter");
                     println!("0. Retour au menu principal");
 
                     let mut tool_choice = String::new();
@@ -138,6 +155,11 @@ fn main() {
                             println!("Vous avez choisi le Programme Encrypt/Decrypt");
                             tools::encrypt::main();
                         }
+                        5 => {
+                            Command::new("clear").status().unwrap();
+                            println!("Vous avez choisi le Programme Convertisseur Temperature");
+                            tools::temperatureconverter::main();
+                        }
                         0 => break,
                         _ => println!("Choix invalide. Veuillez entrer un numéro valide."),
                     }
@@ -149,6 +171,7 @@ fn main() {
                     println!("Menu des outils systèmes:");
                     println!("1. Info Système");
                     println!("2. Benchmark");
+                    println!("3. Algo Short");
                     println!("0. Retour au menu principal");
 
                     let mut system_choice = String::new();
@@ -169,6 +192,11 @@ fn main() {
                             Command::new("clear").status().unwrap();
                             println!("Vous avez choisi le Programme Benchmark");
                             systems::benchmark::main();
+                        }
+                        3 => {
+                            Command::new("clear").status().unwrap();
+                            println!("Vous avez choisi le Programme Algo Short");
+                            systems::algoshort::main();
                         }
                         0 => break,
                         _ => println!("Choix invalide. Veuillez entrer un numéro valide."),
